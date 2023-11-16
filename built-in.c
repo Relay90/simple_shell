@@ -9,9 +9,7 @@
  */
 int bridge(char *check, char **args)
 {
-	int isBuiltIn;
-
-	isBuiltIn = builtins_checker(args);
+	int isBuiltIn = builtins_checker(args);
 
 	if (isBuiltIn == 1)
 	{
