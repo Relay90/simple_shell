@@ -47,9 +47,6 @@ char *read_dir(char *er, struct dirent *s, char *fi, int l, char *p, char *t);
 char *_getenv(char *env);
 char *_strstr(const char *haystack, const char *needle);
 int _strlen(char *s);
-
-void shell(int ac, char **av, char **env);
-void handle_command(char *input, char **env);
-void execute_command(char *command);
+void *_calloc(size_t nmemb, size_t size);
 
 #endif
