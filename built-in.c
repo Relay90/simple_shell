@@ -28,7 +28,7 @@ void exit_shell(char **args, char *line, char **env)
 		line = NULL;
 	}
 
-	exit(0);
+	exit(2);
 }
 /**
  * bridge - Will check to see whether we are dealing with a builtin or not
