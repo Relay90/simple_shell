@@ -22,53 +22,6 @@ void exit_shell(char **args, char *line, char **env)
 	exit(0);
 }
 /**
- * shell - Handles the shell functionality
- * @ac: Arg count
- * @av: Arr of args
- * @env: Environment
- */
-void shell(int ac, char **av, char **env)
-{
-	char input[1024];
-	char *command;
-	char **args = malloc(sizeof(char *) * 64);
-	char *line = malloc(sizeof(char) * 1024);
-
-	(void)ac;
-	(void)av;
-	(void)env;
-
-	if (args == NULL || line == NULL)
-	{
-		fprintf(stderr, "Memory allocation failed\n");
-		exit(EXIT_FAILURE);
-	}
-
-	while (1)
-	{
-		printf("$ ");
-		fgets(input, sizeof(input), stdin);
-
-		if ((strlen(input) > 0) && (input[strlen(input) - 1] == '\n'))
-		{
-			input[strlen(input) - 1] = '\0';
-		}
-
-		command = strtok(input, " ");
-
-		if (command != NULL)
-		{
-			if (strcmp(command, "exit") == 0)
-				exit(0);
-		}
-				else
-				{
-				printf("Command not recognized: %s\n", command);
-				}
-	}
-}
-
-/**
  * bridge - Will check to see whether we are dealing with a builtin or not
  * @check: Figures out what to execute
  * @args: Arguments passed from cmdline broken up
