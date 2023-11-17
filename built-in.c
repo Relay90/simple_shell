@@ -12,12 +12,21 @@ void exit_shell(char **args, char *line, char **env)
 
 	(void)env; /* Avoid unused variable warning */
 
-	for (i = 0; args[i] != NULL; i++)
+	if (args != NULL)
 	{
-		free(args[i]);
+		for (i = 0; args[i] != NULL; i++)
+		{
+			free(args[i]);
+			args[i] = NULL;
+		}
+		free(args);
 	}
-	free(args);
-	free(line);
+
+	if (line != NULL)
+	{
+		free(line);
+		line = NULL;
+	}
 
 	exit(0);
 }
